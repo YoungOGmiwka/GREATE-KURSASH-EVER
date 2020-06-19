@@ -115,7 +115,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="main.cpp" />
+    <ClCompile Include="..\..\..\..\Desktop\Client.cpp" />
+    <ClCompile Include="..\..\..\..\Desktop\main.cpp" />
+    <ClCompile Include="..\..\..\..\Desktop\Play.cpp" />
+    <ClCompile Include="..\..\..\..\Desktop\Sportsman.cpp" />
+    <ClCompile Include="..\..\..\..\Desktop\Subscriber.cpp" />
+    <ClCompile Include="..\..\..\..\Desktop\Tennis.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\..\Desktop\Client.h" />
+    <ClInclude Include="..\..\..\..\Desktop\Play.h" />
+    <ClInclude Include="..\..\..\..\Desktop\Sportsman.h" />
+    <ClInclude Include="..\..\..\..\Desktop\Subscriber.h" />
+    <ClInclude Include="..\..\..\..\Desktop\Tennis.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
