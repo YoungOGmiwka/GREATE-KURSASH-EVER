@@ -4,8 +4,16 @@ void Sportsman::Save()
 {
 }
 
-void Sportsman::Load(std::ifstream fin)
+void Sportsman::Load(std::ifstream &fin)
 {
+
+}
+
+void Sportsman::RandomParams()
+{
+    srand(time(NULL));
+    Speed = rand() % 20 + 80;
+    Lucky = rand() % 100;
 }
 
 Sportsman::~Sportsman()
@@ -42,4 +50,15 @@ void Sportsman::CreateMessage(std::string message)
 void Sportsman::HowManyClient()
 {
     std::cout << "На данный матч подписано " << list_subs_.size() << " клиентов.\n";
+}
+
+Sportsman::Sportsman(std::string Name_, std::string Counry_, std::string BirthDate_, std::string WinsCount_)
+    : Counry(Counry_), Name(Name_), BirthDate(BirthDate_), WinsCount(WinsCount_) 
+{
+    std::cout << "Добавление спортсмена" << std::endl;
+}
+
+void Sportsman::getInfo()
+{
+    std::cout << std::setw(5) << Counry << std::setw(10)<< Name << std::setw(20) << BirthDate << std::setw(10) << WinsCount <<std::endl;
 }

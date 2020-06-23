@@ -15,39 +15,39 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Desktop\Client.cpp">
+    <ClCompile Include="..\..\..\..\Desktop\КОММИТ 2\Client.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Desktop\Play.cpp">
+    <ClCompile Include="..\..\..\..\Desktop\КОММИТ 2\main.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Desktop\Sportsman.cpp">
+    <ClCompile Include="..\..\..\..\Desktop\КОММИТ 2\Sportsman.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Desktop\Tennis.cpp">
+    <ClCompile Include="..\..\..\..\Desktop\КОММИТ 2\Subscriber.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Desktop\Subscriber.cpp">
+    <ClCompile Include="..\..\..\..\Desktop\КОММИТ 2\Tennis.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Desktop\main.cpp">
+    <ClCompile Include="..\..\..\..\Desktop\КОММИТ 2\Play.cpp">
       <Filter>Файлы ресурсов</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\Desktop\Client.h">
+    <ClInclude Include="..\..\..\..\Desktop\КОММИТ 2\Client.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Desktop\Subscriber.h">
+    <ClInclude Include="..\..\..\..\Desktop\КОММИТ 2\Play.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Desktop\Play.h">
+    <ClInclude Include="..\..\..\..\Desktop\КОММИТ 2\Sportsman.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Desktop\Tennis.h">
+    <ClInclude Include="..\..\..\..\Desktop\КОММИТ 2\Subscriber.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\..\..\Desktop\Sportsman.h">
+    <ClInclude Include="..\..\..\..\Desktop\КОММИТ 2\Tennis.h">
       <Filter>Файлы заголовков</Filter>
     </ClInclude>
   </ItemGroup>

@@ -1,5 +1,7 @@
 #pragma once
+#define _CRT_SECURE_NO_WARNINGS
 #include "Sportsman.h"
+#include <fstream>
 
 class Play{
 public:
@@ -8,6 +10,9 @@ public:
     void Add();
     void Del();
     void Load();
+    void Start();
+    Sportsman& getSportsman();
 private:
     std::list<Sportsman*> list_sportsmans_;
+    std::string logFile;
 };

@@ -115,19 +115,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Desktop\Client.cpp" />
-    <ClCompile Include="..\..\..\..\Desktop\main.cpp" />
-    <ClCompile Include="..\..\..\..\Desktop\Play.cpp" />
-    <ClCompile Include="..\..\..\..\Desktop\Sportsman.cpp" />
-    <ClCompile Include="..\..\..\..\Desktop\Subscriber.cpp" />
-    <ClCompile Include="..\..\..\..\Desktop\Tennis.cpp" />
+    <ClCompile Include="..\..\..\..\Desktop\КОММИТ 2\Client.cpp" />
+    <ClCompile Include="..\..\..\..\Desktop\КОММИТ 2\main.cpp" />
+    <ClCompile Include="..\..\..\..\Desktop\КОММИТ 2\Play.cpp" />
+    <ClCompile Include="..\..\..\..\Desktop\КОММИТ 2\Sportsman.cpp" />
+    <ClCompile Include="..\..\..\..\Desktop\КОММИТ 2\Subscriber.cpp" />
+    <ClCompile Include="..\..\..\..\Desktop\КОММИТ 2\Tennis.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\Desktop\Client.h" />
-    <ClInclude Include="..\..\..\..\Desktop\Play.h" />
-    <ClInclude Include="..\..\..\..\Desktop\Sportsman.h" />
-    <ClInclude Include="..\..\..\..\Desktop\Subscriber.h" />
-    <ClInclude Include="..\..\..\..\Desktop\Tennis.h" />
+    <ClInclude Include="..\..\..\..\Desktop\КОММИТ 2\Client.h" />
+    <ClInclude Include="..\..\..\..\Desktop\КОММИТ 2\Play.h" />
+    <ClInclude Include="..\..\..\..\Desktop\КОММИТ 2\Sportsman.h" />
+    <ClInclude Include="..\..\..\..\Desktop\КОММИТ 2\Subscriber.h" />
+    <ClInclude Include="..\..\..\..\Desktop\КОММИТ 2\Tennis.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
