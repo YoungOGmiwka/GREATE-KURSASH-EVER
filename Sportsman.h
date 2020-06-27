@@ -5,6 +5,7 @@
 #include <fstream>
 #include <iomanip>
 #include <ctime>
+#include <windows.h>
 
 class Sportsman : public Tennis
 {
@@ -12,13 +13,13 @@ class Sportsman : public Tennis
 	std::string Name;
 	std::string BirthDate;
 	std::string WinsCount;
-	int Speed;
-	int Lucky;
     std::list<Subscriber*> list_subs_;
     std::string message_;
 public:
-	void Save();
-	void Load(std::ifstream &fin);
+    int Speed;
+    int Lucky;
+	void Save(std::ofstream &fout);
+	int Load(std::ifstream &fin);
     void RandomParams();
     Sportsman() {};
     virtual ~Sportsman();

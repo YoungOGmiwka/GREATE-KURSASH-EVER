@@ -1,24 +1,32 @@
 #include "Sportsman.h"
 
-void Sportsman::Save()
+void Sportsman::Save(std::ofstream& fout)
 {
+    fout << this->Name << std::endl
+        << this->BirthDate << std::endl
+        << this->Counry << std::endl
+        << this->WinsCount << std::endl;
 }
 
-void Sportsman::Load(std::ifstream &fin)
+int Sportsman::Load(std::ifstream &fin)
 {
-
+    getline(fin, this->Name);
+    if (this->Name.empty())
+        return -1;
+    getline(fin, this->BirthDate);
+    getline(fin, this->Counry);
+    getline(fin, this->WinsCount);
+    return 0;
 }
 
 void Sportsman::RandomParams()
 {
-    srand(time(NULL));
     Speed = rand() % 20 + 80;
     Lucky = rand() % 100;
 }
 
 Sportsman::~Sportsman()
 {
-    std::cout << "Спорсмен закончил забег\n";
 }
 
 void Sportsman::Subscribe(Subscriber* observer)
@@ -34,7 +42,7 @@ void Sportsman::Unsubscribe(Subscriber* observer)
 void Sportsman::Notify()
 {
     std::list<Subscriber*>::iterator iterator = list_subs_.begin();
-    HowManyClient();
+   // HowManyClient();
     while (iterator != list_subs_.end()) {
         (*iterator)->Update(message_);
         ++iterator;
@@ -60,5 +68,5 @@ Sportsman::Sportsman(std::string Name_, std::string Counry_, std::string BirthDa
 
 void Sportsman::getInfo()
 {
-    std::cout << std::setw(5) << Counry << std::setw(10)<< Name << std::setw(20) << BirthDate << std::setw(10) << WinsCount <<std::endl;
+    std::cout << Counry << std::setw(15)<< Name << std::setw(20) << BirthDate << std::setw(10) << WinsCount <<std::endl;
 }

@@ -2,13 +2,12 @@
 
 Client::Client(Sportsman& People) : People_(People) {
     this->People_.Subscribe(this);
-    std::cout << "[Подписка], я клиент \"" << ++Client::static_number_ << "\".\n";
-    this->number_ = Client::static_number_;
+    std::cout << "[Подписка]\n";
 }
 
 Client::~Client()
 {
-    std::cout << "[Уход], я клиент \"" << this->number_ << "\".\n";
+    std::cout << "[Уход]\n";
 }
 
 void Client::Update(const std::string& message_from_subject)
@@ -20,10 +19,18 @@ void Client::Update(const std::string& message_from_subject)
 void Client::RemoveMeFromTheList()
 {
     People_.Unsubscribe(this);
-    std::cout << "Клиент \"" << number_ << "\" убрал себя из списка подписок.\n";
+    std::cout << "Клиент убрал себя из списка подписок.\n";
 }
 
 void Client::PrintInfo()
 {
-    std::cout << "Клиент \"" << this->number_ << "\": получил сообщение --> " << this->message_from_subject_ << "\n";
+    std::cout << "Клиент: получил сообщение --> " << this->message_from_subject_ << "\n";
+}
+
+void Client::Subscribe(Sportsman& People)
+{
+    People_.Unsubscribe(this);
+    People_ = People;
+    this->People_.Subscribe(this);
+    std::cout << "[Подписка]\n";
 }

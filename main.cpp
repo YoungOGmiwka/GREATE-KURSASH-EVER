@@ -17,51 +17,61 @@
 
 #include "Client.h"
 
-int Client::static_number_ = 0;
-
 void ClientCode() {
     Play Match;
-    Client *Seeker;
+    Client *Seeker = nullptr;
     char menu;
-    std::cout << "Меню :" << std::endl
-        << "[1] Добавить спортсмена" << std::endl
-        << "[2] Удалить спортсмена" << std::endl
-        << "[3] Вывести список спортсменов" << std::endl
-        << "[4] Следить за спортсменом" << std::endl
-        << "[5] Загрузить спортсменов" << std::endl
-        << "[6] Результаты матчей" << std::endl
-        << "Выбор: ";
-    std::cin >> menu;
-    switch (menu)
+    srand(time(NULL));
+    while (true)
     {
-    case '1':
-        Match.Add();
-        break;
-    case '2':
-        Match.Del();
-        break;
-    case '3':
-        //Match.Print();
-        break;
-    case '4':
-        if(!Seeker)
-            Seeker = new Client(Match.getSportsman());
-        else
+        system("CLS");
+        std::cout << "Меню :" << std::endl
+            << "[1] Добавить спортсмена" << std::endl
+            << "[2] Удалить спортсмена" << std::endl
+            << "[3] Вывести список спортсменов" << std::endl
+            << "[4] Следить за спортсменом" << std::endl
+            << "[5] Загрузить спортсменов" << std::endl
+            << "[6] Сохранить спортсменов" << std::endl
+            << "[7] Результаты матчей" << std::endl
+            << "[0] Выход из программы" << std::endl
+            << "Выбор: ";
+        std::cin >> menu;
+        switch (menu)
         {
+        case '1':
+            Match.Add();
+            break;
+        case '2':
+            Match.Del();
+            break;
+        case '3':
+            Match.Print();
+            break;
+        case '4':
+            if (!Seeker)
+                Seeker = new Client(Match.getSportsman());
+            else
+            {
+                Seeker->Subscribe(Match.getSportsman());
+            }
+            break;
+        case '5':
+            Match.Load();
+            break;
+        case '6':
+            Match.Save();
+            break;
+        case '7':
+            Match.Start();
+            break;
+        case '0':
+            delete Seeker;
+            return;
+        default:
+            break;
         }
-        break;
-    case '5':
-        Match.Load();
-        break;
-    case '6':
-        Match.Start();
-        break;
-    default:
-        break;
+        system("pause>>null");
     }
-    Match.Del();
-    Match.Start();
-    delete Seeker;
 }
 
 int main() {
