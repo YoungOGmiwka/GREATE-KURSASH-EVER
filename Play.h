@@ -10,6 +10,8 @@ public:
     void Add();
     void Del();
     void Load();
+    void Save();
+    void Print();
     void Start();
     Sportsman& getSportsman();
 private:

@@ -1,12 +1,2 @@
 ﻿  Client.cpp
-  main.cpp
-c:\users\misha\desktop\коммит 3\main.cpp(24): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
-  Play.cpp
-c:\users\misha\desktop\коммит 3\play.cpp(44): warning C4018: <: несоответствие типов со знаком и без знака
-c:\users\misha\desktop\коммит 3\play.cpp(103): warning C4244: =: преобразование "int" в "float", возможна потеря данных
-c:\users\misha\desktop\коммит 3\play.cpp(128): warning C4018: <: несоответствие типов со знаком и без знака
-  Sportsman.cpp
-  Subscriber.cpp
-  Tennis.cpp
-  Создание кода...
   GREATE_KURSASH_EVER.vcxproj -> C:\Users\misha\source\repos\GREATE_KURSASH_EVER\Debug\GREATE_KURSASH_EVER.exe
