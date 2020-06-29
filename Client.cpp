@@ -1,36 +1,36 @@
 #include "Client.h"
 
 Client::Client(Sportsman& People) : People_(People) {
-    this->People_.Subscribe(this);
-    std::cout << "[Подписка]\n";
+	this->People_.Subscribe(this);
+	std::cout << "[Клиент подписался]\n";
 }
 
 Client::~Client()
 {
-    std::cout << "[Уход]\n";
+	std::cout << "[Клиент отключился]\n";
 }
 
 void Client::Update(const std::string& message_from_subject)
 {
-    message_from_subject_ = message_from_subject;
-    PrintInfo();
+	message_from_subject_ = message_from_subject;
+	PrintInfo();
 }
 
 void Client::RemoveMeFromTheList()
 {
-    People_.Unsubscribe(this);
-    std::cout << "Клиент убрал себя из списка подписок.\n";
+	People_.Unsubscribe(this);
+	std::cout << "Клиент убрал себя из списка подписок.\n";
 }
 
 void Client::PrintInfo()
 {
-    std::cout << "Клиент: получил сообщение --> " << this->message_from_subject_ << "\n";
+	std::cout << "Клиент: получил сообщение --> " << this->message_from_subject_ << "\n";
 }
 
 void Client::Subscribe(Sportsman& People)
 {
-    People_.Unsubscribe(this);
-    People_ = People;
-    this->People_.Subscribe(this);
-    std::cout << "[Подписка]\n";
+	People_.Unsubscribe(this);
+	People_ = People;
+	this->People_.Subscribe(this);
+	std::cout << "[Подписка]\n";
 }

@@ -3,18 +3,18 @@
 #include "Sportsman.h"
 #include <fstream>
 
-class Play{
+class Play {
 public:
-    Play();
-    ~Play();
-    void Add();
-    void Del();
-    void Load();
-    void Save();
-    void Print();
-    void Start();
-    Sportsman& getSportsman();
+	Play();
+	~Play();
+	void Add();
+	void Del();
+	void Load();
+	void Save();
+	void Print();
+	void Start();
+	Sportsman& getSportsman();
 private:
-    std::list<Sportsman*> list_sportsmans_;
-    std::string logFile;
+	std::list<Sportsman*> list_sportsmans_;
+	std::string logFile;
 };

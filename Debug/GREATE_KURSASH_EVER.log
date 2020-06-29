@@ -1,2 +1,13 @@
-﻿  Client.cpp
+﻿C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\VC\VCTargets\Microsoft.CppBuild.targets(391,5): warning MSB8028: промежуточный каталог (Debug\) содержит файлы, которые используются совместно с другим проектом (GREATE_KURSASH_EVER.vcxproj).  Это может привести к ошибкам очистки и перестроения.
+  Client.cpp
+  Play.cpp
+c:\users\misha\source\repos\greate_kursash_ever\greate_kursash_ever\play.cpp(44): warning C4018: <: несоответствие типов со знаком и без знака
+c:\users\misha\source\repos\greate_kursash_ever\greate_kursash_ever\play.cpp(121): warning C4244: =: преобразование "int" в "float", возможна потеря данных
+c:\users\misha\source\repos\greate_kursash_ever\greate_kursash_ever\play.cpp(147): warning C4018: <: несоответствие типов со знаком и без знака
+  Sportsman.cpp
+  Subscriber.cpp
+  Tennis.cpp
+  main.cpp
+c:\users\misha\source\repos\greate_kursash_ever\greate_kursash_ever\main.cpp(24): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Создание кода...
   GREATE_KURSASH_EVER.vcxproj -> C:\Users\misha\source\repos\GREATE_KURSASH_EVER\Debug\GREATE_KURSASH_EVER.exe

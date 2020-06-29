@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{FB1E23FA-8D16-46AE-9C14-806E81331A9B}</ProjectGuid>
-    <RootNamespace>GREATEKURSASHEVER</RootNamespace>
+    <ProjectGuid>{F6DE9EFE-AA8A-42BC-A584-84FC8508DEEB}</ProjectGuid>
+    <RootNamespace>My3kyrs2labatp</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17134.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -115,19 +115,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Client.h" />
-    <ClInclude Include="Play.h" />
-    <ClInclude Include="Sportsman.h" />
-    <ClInclude Include="Subscriber.h" />
-    <ClInclude Include="Tennis.h" />
-  </ItemGroup>
-  <ItemGroup>
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Play.cpp" />
     <ClCompile Include="Sportsman.cpp" />
     <ClCompile Include="Subscriber.cpp" />
     <ClCompile Include="Tennis.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Client.h" />
+    <ClInclude Include="Play.h" />
+    <ClInclude Include="Sportsman.h" />
+    <ClInclude Include="Subscriber.h" />
+    <ClInclude Include="Tennis.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

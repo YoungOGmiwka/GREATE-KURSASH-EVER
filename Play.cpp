@@ -63,6 +63,11 @@ void Play::Load()
 
 void Play::Save()
 {
+	if (!list_sportsmans_.size())
+	{
+		std::cout << "Sportsman's is ZERO" << std::endl;
+		return;
+	}
 	std::ofstream file("Sportsmans.txt");
 	std::list<Sportsman*>::iterator iterator = list_sportsmans_.begin();
 	while (iterator != list_sportsmans_.end()) {
@@ -74,6 +79,11 @@ void Play::Save()
 
 void Play::Print()
 {
+	if (!list_sportsmans_.size())
+	{
+		std::cout << "Sportsman's is ZERO" << std::endl;
+		return;
+	}
 	std::list<Sportsman*>::iterator iterator = list_sportsmans_.begin();
 	while (iterator != list_sportsmans_.end()) {
 		(*iterator)->getInfo();
@@ -86,31 +96,40 @@ void Play::Start()
 	time_t now = time(0);
 	tm* ltm = localtime(&now);
 	logFile = std::to_string(1970 + ltm->tm_year) + "-" + std::to_string(1 + ltm->tm_mon) + "-" + std::to_string(ltm->tm_mday) + "_" + std::to_string(ltm->tm_hour) + "-" + std::to_string(ltm->tm_min) + "-" + std::to_string(ltm->tm_sec) + ".log";
+	std::ofstream fout(logFile);
 	std::list<Sportsman*>::iterator iterator;
+	if (!list_sportsmans_.size())
+	{
+		std::cout << "Sportsman's is ZERO" << std::endl;
+		return;
+	}
 	float max = 0.0;
 	Sportsman* sMax = nullptr;
+	fout << "MATCH START" << std::endl;
 	for (size_t i = 0; i < 5; i++)
 	{
 		iterator = list_sportsmans_.begin();
 		while (iterator != list_sportsmans_.end()) {
 			(*iterator)->RandomParams();
+			fout << "Имя: " << (*iterator)->getName() << " Удача: " << (*iterator)->Lucky << " Скорость: " << (*iterator)->Speed << std::endl;
 			++iterator;
 		}
 		iterator = list_sportsmans_.begin();
 		max = 0.0;
 		sMax = nullptr;
 		while (iterator != list_sportsmans_.end()) {
-			max < (*iterator)->Speed* (*iterator)->Lucky ? max = (*iterator)->Speed * (*iterator)->Lucky , sMax = *(iterator) : NULL;
+			max < (*iterator)->Speed* (*iterator)->Lucky ? max = (*iterator)->Speed * (*iterator)->Lucky, sMax = *(iterator) : NULL;
 			++iterator;
 		}
+		fout << i + 1 << " ROUND WINNER " << sMax->getName() << std::endl;
 		iterator = list_sportsmans_.begin();
 		while (iterator != list_sportsmans_.end()) {
 			*iterator == sMax ? sMax->CreateMessage("Ваш спортсмен победил!") : (*iterator)->CreateMessage("Ваш спортсмен проиграл!");
 			++iterator;
 		}
 		Sleep(1000);
-	}	
-	/* Дописать выбор победителя */
+	}
+	fout << "MATCH END" << std::endl;
 }
 
 Sportsman& Play::getSportsman()
@@ -125,6 +144,6 @@ Sportsman& Play::getSportsman()
 	}
 	std::cin >> index;
 	iterator = list_sportsmans_.begin();
-	for (size_t i = 0; i < index-1; i++, iterator++);
+	for (size_t i = 0; i < index - 1; i++, iterator++);
 	return **iterator;
 }

@@ -7,6 +7,6 @@
 
 class Subscriber {
 public:
-    virtual ~Subscriber() {};
-    virtual void Update(const std::string& message_from_subject) = 0;
+	virtual ~Subscriber() {};
+	virtual void Update(const std::string& message_from_subject) = 0;
 };

@@ -4,9 +4,9 @@
 задаются скорость и удача каждому спортсмену в скачках на каждый забег.
 
 Первые четыре параметра и количество участников задаются из внешнего файла,
-также пользователь может добавить спортсмена через консоль. 
+также пользователь может добавить спортсмена через консоль.
 
-Клиент выбирает, за каким спортсменом наблюдать. 
+Клиент выбирает, за каким спортсменом наблюдать.
 
 Во время игры клиент наблюдает за соревнованиями и по результатам узнает, какой спортсмен какое место занял;
 выводится сообщение выиграл ли текущий матч выбранный спортсмен. По
@@ -18,64 +18,73 @@
 #include "Client.h"
 
 void ClientCode() {
-    Play Match;
-    Client *Seeker = nullptr;
-    char menu;
-    srand(time(NULL));
-    while (true)
-    {
-        system("CLS");
-        std::cout << "Меню :" << std::endl
-            << "[1] Добавить спортсмена" << std::endl
-            << "[2] Удалить спортсмена" << std::endl
-            << "[3] Вывести список спортсменов" << std::endl
-            << "[4] Следить за спортсменом" << std::endl
-            << "[5] Загрузить спортсменов" << std::endl
-            << "[6] Сохранить спортсменов" << std::endl
-            << "[7] Результаты матчей" << std::endl
-            << "[0] Выход из программы" << std::endl
-            << "Выбор: ";
-        std::cin >> menu;
-        switch (menu)
-        {
-        case '1':
-            Match.Add();
-            break;
-        case '2':
-            Match.Del();
-            break;
-        case '3':
-            Match.Print();
-            break;
-        case '4':
-            if (!Seeker)
-                Seeker = new Client(Match.getSportsman());
-            else
-            {
-                Seeker->Subscribe(Match.getSportsman());
-            }
-            break;
-        case '5':
-            Match.Load();
-            break;
-        case '6':
-            Match.Save();
-            break;
-        case '7':
-            Match.Start();
-            break;
-        case '0':
-            delete Seeker;
-            return;
-        default:
-            break;
-        }
-        system("pause>>null");
-    }
+	Play Match;
+	Client *Seeker = nullptr;
+	char menu;
+	srand(time(NULL));
+	while (true)
+	{
+		try
+		{
+			system("CLS");
+			std::cout << "Меню :" << std::endl
+				<< "[1] Добавить спортсмена" << std::endl
+				<< "[2] Удалить спортсмена" << std::endl
+				<< "[3] Вывести список спортсменов" << std::endl
+				<< "[4] Следить за спортсменом" << std::endl
+				<< "[5] Загрузить спортсменов" << std::endl
+				<< "[6] Сохранить спортсменов" << std::endl
+				<< "[7] Результаты матчей" << std::endl
+				<< "[0] Выход из программы" << std::endl
+				<< "Выбор: ";
+			std::cin >> menu;
+			if (menu > 7 && menu < 0)
+				throw (std::string)"Ошибка выбора меню";
+			switch (menu)
+			{
+			case '1':
+				Match.Add();
+				break;
+			case '2':
+				Match.Del();
+				break;
+			case '3':
+				Match.Print();
+				break;
+			case '4':
+				if (!Seeker)
+					Seeker = new Client(Match.getSportsman());
+				else
+				{
+					Seeker->Subscribe(Match.getSportsman());
+				}
+				break;
+			case '5':
+				Match.Load();
+				break;
+			case '6':
+				Match.Save();
+				break;
+			case '7':
+				Match.Start();
+				break;
+			case '0':
+				delete Seeker;
+				return;
+			default:
+				break;
+			}
+			system("pause>>null");
+		}
+		catch (std::string err)
+		{
+
+		}
+	}
 }
 
 int main() {
-    setlocale(LC_ALL, "Rus");
-    ClientCode();
-    return 0;
+	setlocale(LC_ALL, "Rus");
+	ClientCode();
+	return 0;
 }
